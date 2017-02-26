@@ -11,12 +11,12 @@ package is if you would like to add the ability to deliver emails to Maildir fol
 
 Import
 
- `"github.com/flashmob/maildiranasaurus"` to your Go-guerrilla project. Import `"github.com/flashmob/go-guerrilla/backends"` 
+ `"github.com/flashmob/maildir-processor"` to your Go-guerrilla project. Import `"github.com/flashmob/go-guerrilla/backends"` 
 assuming your have done already, assummg you have imported the go-guerrilla package already.
 
 Somewhere at the top of your code, maybe in your `init()` function, add
 
-`backends.Svc.AddProcessor("MailDir", maildiranasaurus.MaildirProcessor)`
+`backends.Svc.AddProcessor("MailDir", maildir.MaildirProcessor)`
 
 This will let Go-Guerrilla know about your MailDir processor.
 
