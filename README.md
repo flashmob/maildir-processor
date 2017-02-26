@@ -5,14 +5,12 @@ Maildir is a popular email storage format.
 ## About
 
 This package is a _Processor_ for the Go-Guerrilla default `Backend` interface implementation. Typical use for this
-package is if you would like to add the ability to deliver emails to Maildir folders, using the default Go-Guerrilla backend gateway. 
+package is if you would like to add the ability to deliver emails to Maildir folders, using Go-Guerrilla's backend gateway. 
 
 ## Usage
 
-Import
-
  `"github.com/flashmob/maildir-processor"` to your Go-guerrilla project. Import `"github.com/flashmob/go-guerrilla/backends"` 
-assuming your have done already, assummg you have imported the go-guerrilla package already.
+assuming your have done already, assuming you have imported the go-guerrilla package already.
 
 Somewhere at the top of your code, maybe in your `init()` function, add
 
@@ -20,7 +18,7 @@ Somewhere at the top of your code, maybe in your `init()` function, add
 
 This will let Go-Guerrilla know about your MailDir processor.
 
-See configuration section for how to configure. Send your configuration to Go-Guerrilla's backends.New() function.
+See the configuration section for how to configure. Send your configuration to Go-Guerrilla's backends.New() function.
 
 
 ## Configuration
@@ -40,7 +38,13 @@ Don't forget to add `MailDir` to the end of your `process_stack` config option, 
 ## Example
 
 Take a look at [Maildiranasaurus](https://github.com/flashmob/maildiranasaurus) - an SMTP server that uses Go-Guerrilla as a 
-package and adds Maildir processing using this package.
+package and adds Maildir delivery using this package.
+
+## Credits
+
+This package depends on Simon Lipp's [Go MailDir](github.com/sloonz/go-maildir) package.
+
+`go get github.com/sloonz/go-maildir`
 
 
  
