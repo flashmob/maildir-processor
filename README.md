@@ -14,7 +14,7 @@ assuming your have done already, assuming you have imported the go-guerrilla pac
 
 Somewhere at the top of your code, maybe in your `init()` function, add
 
-`backends.Svc.AddProcessor("MailDir", maildir.MaildirProcessor)`
+`backends.Svc.AddProcessor("MailDir", maildir_processor.Processor)`
 
 This will let Go-Guerrilla know about your MailDir processor.
 

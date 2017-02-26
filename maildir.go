@@ -121,7 +121,7 @@ func usermap(usermap string) (ret map[string][]int) {
 	return
 }
 
-var MaildirProcessor = func() backends.Decorator {
+var Processor = func() backends.Decorator {
 
 	// The following initialization is run when the program first starts
 
