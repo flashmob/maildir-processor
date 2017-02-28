@@ -42,7 +42,7 @@ package and adds Maildir delivery using this package.
 
 ## Credits
 
-This package depends on Simon Lipp's [Go MailDir](github.com/sloonz/go-maildir) package.
+This package depends on Simon Lipp's [Go MailDir](https://github.com/sloonz/go-maildir) package.
 
 `go get github.com/sloonz/go-maildir`
 
