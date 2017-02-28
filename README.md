@@ -4,17 +4,18 @@ Maildir is a popular email storage format.
 
 ## About
 
-This package is a _Processor_ for the Go-Guerrilla default `Backend` interface implementation. Typical use for this
-package is if you would like to add the ability to deliver emails to Maildir folders, using Go-Guerrilla's built-in _gateway_ backend. 
+This package is a _Processor_ for the Go-Guerrilla default backend implementation. Use for this in your project
+if you are using Go-Guerrilla as a package and you would like to add the ability to deliver emails to Maildir folders, using Go-Guerrilla's default backend. 
 
 ## Usage
 
-Import `"github.com/flashmob/maildir-processor"` to your Go-guerrilla project. Import `"github.com/flashmob/go-guerrilla/backends"` 
-assuming your have done already, assuming you have imported the go-guerrilla package already.
+Import `"github.com/flashmob/maildir-processor"` to your Go-guerrilla project. if not already already, import `"github.com/flashmob/go-guerrilla/backends"` - assuming you have imported the go-guerrilla package already.
 
-Somewhere at the top of your code, maybe in your `init()` function, add
+Somewhere at the top of your code, maybe in your `init()` function, add:
 
-`backends.Svc.AddProcessor("MailDir", maildir_processor.Processor)`
+```go
+backends.Svc.AddProcessor("MailDir", maildir_processor.Processor)
+```
 
 This will let Go-Guerrilla know about your MailDir processor.
 
@@ -23,7 +24,7 @@ See the configuration section for how to configure. Send your configuration to G
 
 ## Configuration
 
-The following values are required in your `backend_config` section
+The following values are required in your `backend_config` section of your JSON configuration file
 
 * `maildir_path` - string. maildir_path may contain a `[user]` placeholder. This will be substituted at run time
 eg `/home/[user]/Maildir` will get substituted to `/home/test/Maildir` for `test@example.com`
