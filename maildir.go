@@ -158,7 +158,6 @@ var Processor = func() backends.Decorator {
 				// This is called each time a recipient is added,
 				// validate only the _last_ recipient that was appended
 				if size := len(e.RcptTo); size > 0 {
-					// since
 					if err := m.validateRcpt(&e.RcptTo[size-1]); err != nil {
 						backends.Log().WithError(backends.NoSuchUser).Info("recipient not configured: ", e.RcptTo[size-1].User)
 						return backends.NewResult(
