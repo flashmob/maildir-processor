@@ -30,8 +30,8 @@ The following values are required in your `backend_config` section of your JSON 
 eg `/home/[user]/Maildir` will get substituted to `/home/test/Maildir` for `test@example.com`
 * `maildir_user_map` - string. This is a string holding user to group/id mappings - in other words, the recipient table,
 each record separated by "," where records have the following format: `<username>=<id>:<group>`<br>
-Example: `"test=1002:2003,guerrilla=1001:1001"`
-
+Example: `"test=1002:2003,guerrilla=1001:1001"` . Use -1 for `<id>` & `<group>` if you want to ignore these, otherwise get these numbers from /etc/passwd
+ 
 Don't forget to add `MailDir` to the end of your `process_stack` config option, eg:
 
 `"process_stack": "HeadersParser|Debugger|Hasher|Header|MailDir",`
@@ -45,7 +45,7 @@ package and adds Maildir delivery using this package.
 
 This package depends on Simon Lipp's [Go MailDir](https://github.com/sloonz/go-maildir) package.
 
-`go get github.com/sloonz/go-maildir`
+
 
 
  

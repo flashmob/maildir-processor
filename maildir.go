@@ -5,7 +5,8 @@ import (
 	"github.com/flashmob/go-guerrilla/backends"
 	"github.com/flashmob/go-guerrilla/mail"
 	"github.com/flashmob/go-guerrilla/response"
-	"github.com/sloonz/go-maildir"
+	_ "github.com/sloonz/go-maildir"
+	"github.com/flashmob/go-maildir"
 	"os"
 	"os/user"
 	"strconv"
@@ -22,6 +23,7 @@ type maildirConfig struct {
 	// This is a string holding user to group/id mappings - in other words, the recipient table
 	// Each record separated by ","
 	// Records have the following format: <username>=<id>:<group>
+	// use -1 for <id> & <group> if you want to ignore these, otherwise get these numbers from /etc/passwd
 	// Example: "test=1002:2003,guerrilla=1001:1001"
 	UserMap string `json:"maildir_user_map"`
 }
