@@ -163,7 +163,7 @@ var Processor = func() backends.Decorator {
 					if err := m.validateRcpt(&e.RcptTo[size-1]); err != nil {
 						backends.Log().WithError(backends.NoSuchUser).Info("recipient not configured: ", e.RcptTo[size-1].User)
 						return backends.NewResult(
-							response.Canned.FailNoSenderDataCmd),
+							response.Canned.FailRcptCmd),
 							backends.NoSuchUser
 					}
 
